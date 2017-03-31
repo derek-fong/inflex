@@ -1,4 +1,6 @@
 # Inflex
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/SilverCubes/inflex.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/SilverCubes/inflex.svg?branch=master)](https://travis-ci.org/SilverCubes/inflex)
 [![Coverage Status](https://coveralls.io/repos/github/SilverCubes/inflex/badge.svg?branch=master)](https://coveralls.io/github/SilverCubes/inflex?branch=master)
 
