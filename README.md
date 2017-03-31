@@ -1,5 +1,6 @@
 # Inflex
 [![Build Status](https://travis-ci.org/SilverCubes/inflex.svg?branch=master)](https://travis-ci.org/SilverCubes/inflex)
+[![Coverage Status](https://coveralls.io/repos/github/SilverCubes/inflex/badge.svg?branch=master)](https://coveralls.io/github/SilverCubes/inflex?branch=master)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
