@@ -18,10 +18,9 @@ addons:
       - google-chrome-beta
 before_install:
   - curl https://install.meteor.com | /bin/sh
-  - npm install -g meteor-client-bundler
   - npm install
-  - npm run meteor-client:bundle
-  - ng build
+  - npm run meteor-client:bundle -- --url=$METEOR_API_URL
+  - npm run build -- --prod
   - export CHROME_BIN=/usr/bin/google-chrome
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
@@ -31,3 +30,7 @@ script:
 
 after_script:
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+
+deploy:
+  provider: firebase
+  token: $FIREBASE_TOKEN

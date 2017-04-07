@@ -4,14 +4,15 @@
   "license": "MIT",
   "scripts": {
     "api": "cd api && meteor run",
-    "meteor-client:bundle": "meteor-client bundle -s api",
+    "build": "ng build",
     "commitmsg": "validate-commit-msg",
+    "e2e": "ng e2e",
+    "firebase": "firebase",
+    "lint": "ng lint",
+    "meteor-client:bundle": "meteor-client bundle -s api",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -38,6 +39,7 @@
     "@types/node": "~7.0.12",
     "@types/underscore": "^1.8.0",
     "codelyzer": "~2.1.0",
+    "firebase-tools": "^3.6.0",
     "husky": "^0.13.3",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
