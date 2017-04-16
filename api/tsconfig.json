@@ -15,8 +15,8 @@
     "skipLibCheck": true,
     "stripInternal": true,
     "noImplicitAny": false,
-    "types": [
-      "@types/meteor"
+    "typeRoots": [
+      "node_modules/@types"
     ]
   },
   "exclude": [

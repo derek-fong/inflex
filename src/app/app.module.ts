@@ -1,21 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser';
+import 'hammerjs';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { MdSidenavModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { AuthService } from './auth/auth.service';
+import { AppRoutingModule } from './app-routing.module';
+import { CoreModule } from './core/core.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { HttpStatusModule } from './http-status/http-status.module';
 
 @NgModule({
+  imports: [
+    AppRoutingModule,
+    CoreModule,
+    DashboardModule,
+    HttpStatusModule,
+    MdSidenavModule
+  ],
   declarations: [
     AppComponent
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
-  ],
-  providers: [ AuthService ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

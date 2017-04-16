@@ -16,19 +16,31 @@ addons:
     packages:
       - google-chrome-stable
       - google-chrome-beta
+
 before_install:
-  - curl https://install.meteor.com | /bin/sh
-  - npm install
-  - npm run meteor-client:bundle -- --url=$METEOR_API_URL
-  - npm run build -- --prod
   - export CHROME_BIN=/usr/bin/google-chrome
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
+
+install:
+  - curl https://install.meteor.com | /bin/sh
+  - cd api
+  - meteor npm install
+  - cd ..
+  - npm install
+
+before_script:
+  - npm run meteor-client:bundle -- --url=$METEOR_API_URL
+
 script:
-  - ng test --watch false
-  - ng test --code-coverage --single-run
+  - npm run build -- --prod
 
 after_script:
+  - cd api
+  - npm run test:dispatch:mocha -- --settings private/settings.json
+  - cd ..
+  - npm test -- --watch false
+  - npm test -- --code-coverage --single-run
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 
 deploy:

@@ -1,7 +1,18 @@
 import { Meteor } from 'meteor/meteor';
+import { check } from 'meteor/check';
+
+import { userHasPermission } from '../imports/auth.functions';
 
 Meteor.methods({
-  'auth:getToken': function(): string {
-    return `Random token: ${Math.random() * 10000}`;
+
+  // TODO: Remove in PROD.
+  'auth:getSampleToken': function(token: string, tokenHeader: string) {
+    check(tokenHeader, String);
+
+    if (!userHasPermission(token, 'read:silver-cubes:tasks')) {
+      throw new Meteor.Error(403, 'Forbidden');
+    }
+
+    return `${tokenHeader}_${Math.random() * 10000}`;
   }
 });
