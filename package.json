@@ -47,7 +47,7 @@
     "@types/node": "~7.0.12",
     "@types/underscore": "^1.8.0",
     "codelyzer": "~2.1.0",
-    "firebase-tools": "^3.6.0",
+    "firebase-tools": "^3.6.1",
     "husky": "^0.13.3",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.3.0",
