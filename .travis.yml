@@ -33,12 +33,10 @@ before_script:
   - npm run meteor-client:bundle -- --url=$METEOR_API_URL
 
 script:
-  - npm run build -- --prod
-
-after_script:
   - cd api
   - npm run test:dispatch:mocha -- --settings private/settings.json
   - cd ..
+  - npm run build -- --prod
   - npm test -- --watch false
   - npm test -- --code-coverage --single-run
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
